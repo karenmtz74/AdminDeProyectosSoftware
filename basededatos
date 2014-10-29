@@ -11,39 +11,16 @@ CREATE  TABLE `botellasPet`.`Estudiante` (
   
   
   ALTER TABLE `botellasPet`.`Estudiante` ADD COLUMN `Nombre` VARCHAR(45) NULL  AFTER `idEstudiante` ;
+  ALTER TABLE `botellasPet`.`Estudiante` ADD COLUMN `Saldo` DOUBLE NULL  AFTER `Email` , ADD COLUMN `Password` VARCHAR(45) NULL  AFTER `Saldo` ;
+  ALTER TABLE `botellasPet`.`Estudiante` DROP COLUMN `Apellido Materno` , DROP COLUMN `Apellido Paterno` , CHANGE COLUMN `Nombre` `Nombre_completo` VARCHAR(45) NULL DEFAULT NULL  ;
 
 
-CREATE  TABLE `botellasPet`.`Usuario` (
-  `idUsuario` INT NOT NULL ,
-  `Password` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`idUsuario`) ,
-  CONSTRAINT `idUsuario`
-    FOREIGN KEY (`idUsuario` )
-    REFERENCES `botellasPet`.`Estudiante` (`idEstudiante` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
 
-CREATE  TABLE `botellasPet`.`Impresiones` (
-  `idEstudiant` INT NOT NULL ,
-  `Saldo` DOUBLE NULL ,
-  PRIMARY KEY (`idEstudiant`) ,
-  CONSTRAINT `idEstudiant`
-    FOREIGN KEY (`idEstudiant` )
-    REFERENCES `botellasPet`.`Estudiante` (`idEstudiante` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
-    
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('143935', 'Anakaren', 'ISTI', '2223213757', 'anakaren.salgadomz@udlap.mx');
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('143524', 'Carolina', 'ISTI', '2383865659', 'carolina.acostaty@udlap.mx');
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('141614', 'Lizbeth', 'ISTI', '2291842039', 'lizbeth.peraltamz@udlap.mx');
 
-
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Apellido Paterno`, `Apellido Materno`, `Carrera`, `Telefono`, `Email`) VALUES ('143935', 'Anakaren', 'Salgado', 'Martinez', 'ISTI', '2223213757', 'anakaren.salgadomz@udlap.mx');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Apellido Paterno`, `Apellido Materno`, `Carrera`, `Telefono`, `Email`) VALUES ('143524', 'Carolina', 'Acosta', 'Tovany', 'ISTI', '2383865659', 'carolina.acostaty@udlap.mx');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Apellido Paterno`, `Apellido Materno`, `Carrera`, `Telefono`, `Email`) VALUES ('141614', 'Lizbeth', 'Peralta', 'Malvaez', 'ISTI', '2291842039', 'lizbeth.peraltamz@udlap.mx');
-
-INSERT INTO `botellasPet`.`Impresiones` (`idEstudiant`, `Saldo`) VALUES ('143935', '10.0');
-INSERT INTO `botellasPet`.`Impresiones` (`idEstudiant`, `Saldo`) VALUES ('141614', '11.5');
-INSERT INTO `botellasPet`.`Impresiones` (`idEstudiant`, `Saldo`) VALUES ('143524', '5.35');
-
-INSERT INTO `botellasPet`.`Usuario` (`idUsuario`, `Password`) VALUES ('141614', 'root');
-INSERT INTO `botellasPet`.`Usuario` (`idUsuario`, `Password`) VALUES ('143935', 'root');
-INSERT INTO `botellasPet`.`Usuario` (`idUsuario`, `Password`) VALUES ('143524', 'root');
+UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Lizbeth Peralta Malvaez', `Saldo`='10.0', `Password`='root' WHERE `idEstudiante`='141614';
+UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Carolina Acosta Tovany', `Saldo`='11.5', `Password`='root' WHERE `idEstudiante`='143524';
+UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Anakaren Salgado Martinez', `Saldo`='5.35', `Password`='root' WHERE `idEstudiante`='143935';
 
