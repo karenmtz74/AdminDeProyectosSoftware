@@ -15,12 +15,7 @@ CREATE  TABLE `botellasPet`.`Estudiante` (
   ALTER TABLE `botellasPet`.`Estudiante` DROP COLUMN `Apellido Materno` , DROP COLUMN `Apellido Paterno` , CHANGE COLUMN `Nombre` `Nombre_completo` VARCHAR(45) NULL DEFAULT NULL  ;
 
 
-
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('143935', 'Anakaren', 'ISTI', '2223213757', 'anakaren.salgadomz@udlap.mx');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('143524', 'Carolina', 'ISTI', '2383865659', 'carolina.acostaty@udlap.mx');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre`, `Carrera`, `Telefono`, `Email`) VALUES ('141614', 'Lizbeth', 'ISTI', '2291842039', 'lizbeth.peraltamz@udlap.mx');
-
-UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Lizbeth Peralta Malvaez', `Saldo`='10.0', `Password`='root' WHERE `idEstudiante`='141614';
-UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Carolina Acosta Tovany', `Saldo`='11.5', `Password`='root' WHERE `idEstudiante`='143524';
-UPDATE `botellasPet`.`Estudiante` SET `Nombre_completo`='Anakaren Salgado Martinez', `Saldo`='5.35', `Password`='root' WHERE `idEstudiante`='143935';
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('143935', 'Anakaren Salgado Martinez', 'ISTI', '2223213757', 'anakaren.salgadomz@udlap.mx', '5.35', 'root');
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('143524', 'Carolina Acosta Tovany', 'ISTI', '2383865659', 'carolina.acostaty@udlap.mx', '11.5', 'root');
+INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('141614', 'Lizbeth Peralta Malvaez', 'ISTI', '2291842039', 'lizbeth.peraltamz@udlap.mx', '10.0', 'root');
 
