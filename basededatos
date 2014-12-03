@@ -1,21 +1,26 @@
-CREATE SCHEMA `botellasPet` ;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE  TABLE `botellasPet`.`Estudiante` (
+CREATE SCHEMA IF NOT EXISTS `BPP` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `BPP` ;
+
+-- -----------------------------------------------------
+-- Table `BPP`.`Estudiante`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `BPP`.`Estudiante` (
   `idEstudiante` INT NOT NULL ,
-  `Apellido Paterno` VARCHAR(45) NULL ,
-  `Apellido Materno` VARCHAR(45) NULL ,
-  `Carrera` VARCHAR(45) NULL ,
-  `Telefono` VARCHAR(45) NULL ,
-  `Email` VARCHAR(45) NULL ,
-  PRIMARY KEY (`idEstudiante`) );
-  
-  
-  ALTER TABLE `botellasPet`.`Estudiante` ADD COLUMN `Nombre` VARCHAR(45) NULL  AFTER `idEstudiante` ;
-  ALTER TABLE `botellasPet`.`Estudiante` ADD COLUMN `Saldo` DOUBLE NULL  AFTER `Email` , ADD COLUMN `Password` VARCHAR(45) NULL  AFTER `Saldo` ;
-  ALTER TABLE `botellasPet`.`Estudiante` DROP COLUMN `Apellido Materno` , DROP COLUMN `Apellido Paterno` , CHANGE COLUMN `Nombre` `Nombre_completo` VARCHAR(45) NULL DEFAULT NULL  ;
+  `nombre` VARCHAR(45) NOT NULL ,
+  `carrera` VARCHAR(45) NOT NULL ,
+  `mail` VARCHAR(45) NULL ,
+  `password` VARCHAR(45) NOT NULL ,
+  `saldo` DOUBLE NULL ,
+  PRIMARY KEY (`idEstudiante`) )
+ENGINE = InnoDB;
+
+USE `BPP` ;
 
 
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('143935', 'Anakaren Salgado Martinez', 'ISTI', '2223213757', 'anakaren.salgadomz@udlap.mx', '5.35', 'root');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('143524', 'Carolina Acosta Tovany', 'ISTI', '2383865659', 'carolina.acostaty@udlap.mx', '11.5', 'root');
-INSERT INTO `botellasPet`.`Estudiante` (`idEstudiante`, `Nombre_completo`, `Carrera`, `Telefono`, `Email`, `Saldo`, `Password`) VALUES ('141614', 'Lizbeth Peralta Malvaez', 'ISTI', '2291842039', 'lizbeth.peraltamz@udlap.mx', '10.0', 'root');
-
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
