@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author Loreto
+ * @author Arturo Jain
  */
 public class Saldos {
 
