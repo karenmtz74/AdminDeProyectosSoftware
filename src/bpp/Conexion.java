@@ -7,7 +7,7 @@ package bpp;
 
 /**
  *
- * @author ana_sm74
+ * @author Arturo Jain
  */
 
 import java.sql.Connection;
