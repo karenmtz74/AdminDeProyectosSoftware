@@ -7,7 +7,7 @@ package bpp;
 
 /**
  *
- * @author ana_sm74
+ * @author Loreto, ana_sm74
  */
 import java.io.FileNotFoundException;
 import java.io.IOException;
