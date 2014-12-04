@@ -51,7 +51,8 @@ mysql_close($enlace);?>
 <td></td>
 <td><button class="btn" onClick="location.href='index.php'">Cerrar Sesión</button></td>
 <td></td>
-<td><button class="btn">Insertar Botellas</button></td>
+<td><button class="btn" onClick="location.href='<?php echo 'botellas.php?idEstudiante='.$idEstudiante.'' ?>'">Introducir Botellas</button>
+</td>
 </tr></table>
 
 </div>

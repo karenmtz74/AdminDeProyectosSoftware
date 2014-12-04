@@ -21,6 +21,7 @@
 <body>
     <div class="content">
     	<p align="center"><img src="img/10834064_10152353163662563_1494124012_n.jpg" /></p>
+        <p align="center">Lo sentimos! :( no existe ese usuario, favor de intentarlo de nuevo.</p>
 			<section>
 				
 				<div class="mockup-content">
@@ -32,7 +33,7 @@
 									<span class="icon icon-close">Close the dialog</span>
 									<h2>Login</h2>
 									<form id="login" name="login" method="post" action="login.php" onSubmit="return validar();" >
-										<p><label>User</label><input type="text" id="idEstudiantes" name="idEstudiantes"  autofocus/></p>
+										<p><label>User</label><input type="text" id="idEstudiantes" name="idEstudiantes" autofocus/></p>
 										
 									</form>
 								</div>
